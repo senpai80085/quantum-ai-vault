@@ -57,6 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Quantum Security Colors
+        quantum: {
+          glow: "hsl(var(--quantum-glow))",
+          secondary: "hsl(var(--quantum-secondary))",
+          success: "hsl(var(--quantum-success))",
+          warning: "hsl(var(--quantum-warning))",
+          danger: "hsl(var(--quantum-danger))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
