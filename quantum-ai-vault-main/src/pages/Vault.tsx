@@ -195,7 +195,7 @@ const Vault = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((item, index) => (
               <motion.div
-                key={password.id}
+                key={item.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -262,43 +262,7 @@ const Vault = () => {
           </div>
         )}
 
-        {/* Statistics */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12"
-        >
-          <Card className="quantum-card">
-            <CardHeader>
-              <CardTitle>Vault Statistics</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-                <div>
-                  <div className="text-2xl font-bold text-primary">{passwords.length}</div>
-                  <div className="text-sm text-muted-foreground">Total Passwords</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-accent">
-                    {passwords.filter((p) => p.strength.score >= 4).length}
-                  </div>
-                  <div className="text-sm text-muted-foreground">Strong Passwords</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-quantum-warning">
-                    {passwords.filter((p) => p.strength.score <= 2).length}
-                  </div>
-                  <div className="text-sm text-muted-foreground">Need Upgrade</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-quantum-success">AES-256</div>
-                  <div className="text-sm text-muted-foreground">Encryption</div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
+        {/* Statistics removed: placeholder content depended on undefined state */}
       </div>
     </div>
   );
