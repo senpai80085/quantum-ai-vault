@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Quantum-Safe Password Manager Design System 
+All colors MUST be HSL for perfect theming.
+*/
+
+@layer base {
+  :root {
+    /* Quantum Cybersecurity Theme */
+    --background: 220 27% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 27% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 27% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary: Electric Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 27% 8%;
+
+    /* Secondary: Deep Navy */
+    --secondary: 220 27% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 27% 12%;
+    --muted-foreground: 217 10% 64.9%;
+
+    /* Accent: Neon Cyan */
+    --accent: 185 100% 50%;
+    --accent-foreground: 220 27% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 27% 20%;
+    --input: 220 27% 15%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Quantum Security Colors */
+    --quantum-glow: 217 91% 60%;
+    --quantum-secondary: 185 100% 50%;
+    --quantum-success: 142 76% 36%;
+    --quantum-warning: 38 92% 50%;
+    --quantum-danger: 0 84% 60%;
+
+    /* Gradients */
+    --gradient-quantum: linear-gradient(135deg, hsl(217 91% 60% / 0.8), hsl(185 100% 50% / 0.6));
+    --gradient-hero: linear-gradient(135deg, hsl(220 27% 8%), hsl(220 27% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(220 27% 10% / 0.8), hsl(220 27% 12% / 0.4));
+
+    /* Shadows & Effects */
+    --shadow-quantum: 0 0 30px hsl(217 91% 60% / 0.3);
+    --shadow-glow: 0 0 50px hsl(185 100% 50% / 0.2);
+    --shadow-card: 0 8px 32px hsl(220 27% 4% / 0.3);
+
+    /* Glass Morphism */
+    --glass-bg: hsl(220 27% 10% / 0.7);
+    --glass-border: hsl(217 91% 60% / 0.2);
+
+    /* Animation Variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Quantum Glass Cards */
+  .quantum-card {
+    @apply backdrop-blur-xl bg-card/80 border border-white/10 rounded-xl shadow-lg;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
+  }
+
+  .quantum-glow {
+    box-shadow: var(--shadow-quantum);
+  }
+
+  .quantum-button {
+    @apply relative overflow-hidden transition-all duration-300;
+    background: var(--gradient-quantum);
+  }
+
+  .quantum-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-quantum);
+  }
+
+  /* Animated Background */
+  .quantum-bg {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quantum-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, hsl(217 91% 60% / 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, hsl(185 100% 50% / 0.1) 0%, transparent 50%);
+    animation: pulse 4s ease-in-out infinite alternate;
+  }
+
+  /* Strength Meter */
+  .strength-weak { @apply bg-red-500; }
+  .strength-fair { @apply bg-yellow-500; }
+  .strength-good { @apply bg-blue-500; }
+  .strength-strong { @apply bg-primary; }
+  .strength-very-strong { @apply bg-accent; }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .text-gradient {
+    background: var(--gradient-quantum);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.5);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(217 91% 60% / 0.8), 0 0 40px hsl(185 100% 50% / 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}

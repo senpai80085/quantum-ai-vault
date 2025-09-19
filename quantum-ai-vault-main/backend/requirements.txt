@@ -1,0 +1,13 @@
+fastapi==0.114.2
+uvicorn[standard]==0.30.6
+python-dotenv==1.0.1
+SQLAlchemy==2.0.34
+cryptography==43.0.1
+pytest==8.3.2
+httpx==0.27.2
+psycopg2-binary==2.9.9; python_version < "3.13"
+# Optional: pyOQS (installed separately if liboqs available)
+
+# Optional AI deps (install only if you want local HF model):
+# See backend/requirements-ml.txt
+

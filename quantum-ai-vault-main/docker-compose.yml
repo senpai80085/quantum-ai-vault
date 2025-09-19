@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      - DATABASE_URL=sqlite:////data/backend.db
+      - ENABLE_PYOQS=${ENABLE_PYOQS:-false}
+      - CORS_ALLOW_ORIGINS=*
+    volumes:
+      - backend_data:/data
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+volumes:
+  backend_data: {}
+
+
