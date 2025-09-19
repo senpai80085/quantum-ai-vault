@@ -24,10 +24,10 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone https://github.com/senpai80085/quantum-ai-vault
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd quantum-ai-vault
 
 # Step 3: Install the necessary dependencies.
 npm i
