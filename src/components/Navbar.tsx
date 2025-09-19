@@ -5,8 +5,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
-  const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Safely get location with error handling
+  let location;
+  try {
+    location = useLocation();
+  } catch (error) {
+    console.error("Router context error:", error);
+    return null; // Don't render if router context is not available
+  }
   
   const isAuth = localStorage.getItem("quantum_token");
 
@@ -36,7 +44,7 @@ const Navbar = () => {
                 key={item.name}
                 to={item.href}
                 className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location.pathname === item.href
+                  location?.pathname === item.href
                     ? "text-primary"
                     : "text-muted-foreground"
                 }`}
@@ -96,7 +104,7 @@ const Navbar = () => {
                     key={item.name}
                     to={item.href}
                     className={`text-sm font-medium transition-colors hover:text-primary ${
-                      location.pathname === item.href
+                      location?.pathname === item.href
                         ? "text-primary"
                         : "text-muted-foreground"
                     }`}
