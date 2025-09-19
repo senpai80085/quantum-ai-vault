@@ -142,23 +142,55 @@ All colors MUST be HSL for perfect theming.
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quantum-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(217 91% 60% / 0.1), transparent);
+    animation: shimmer 3s infinite;
   }
 
   .quantum-glow {
     box-shadow: var(--shadow-quantum);
+    animation: quantum-pulse 2s ease-in-out infinite alternate;
   }
 
   .quantum-button {
     @apply relative overflow-hidden transition-all duration-300;
     background: var(--gradient-quantum);
+    border: 1px solid hsl(217 91% 60% / 0.3);
+    position: relative;
+  }
+
+  .quantum-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(185 100% 50% / 0.3), transparent);
+    transition: left 0.5s;
+  }
+
+  .quantum-button:hover::before {
+    left: 100%;
   }
 
   .quantum-button:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-quantum);
+    border-color: hsl(217 91% 60% / 0.6);
   }
 
-  /* Animated Background */
+  /* AI Neural Network Background */
   .quantum-bg {
     background: var(--gradient-hero);
     position: relative;
@@ -172,17 +204,101 @@ All colors MUST be HSL for perfect theming.
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 80%, hsl(217 91% 60% / 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, hsl(185 100% 50% / 0.1) 0%, transparent 50%);
+    background: 
+      radial-gradient(circle at 20% 80%, hsl(217 91% 60% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(185 100% 50% / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(142 76% 36% / 0.05) 0%, transparent 50%);
     animation: pulse 4s ease-in-out infinite alternate;
   }
 
-  /* Strength Meter */
-  .strength-weak { @apply bg-red-500; }
-  .strength-fair { @apply bg-yellow-500; }
-  .strength-good { @apply bg-blue-500; }
-  .strength-strong { @apply bg-primary; }
-  .strength-very-strong { @apply bg-accent; }
+  .quantum-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(45deg, transparent 40%, hsl(217 91% 60% / 0.02) 50%, transparent 60%),
+      linear-gradient(-45deg, transparent 40%, hsl(185 100% 50% / 0.02) 50%, transparent 60%);
+    background-size: 20px 20px;
+    animation: neural-drift 20s linear infinite;
+  }
+
+  /* PQC Security Indicators */
+  .pqc-indicator {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium;
+    background: linear-gradient(135deg, hsl(142 76% 36% / 0.2), hsl(185 100% 50% / 0.2));
+    border: 1px solid hsl(142 76% 36% / 0.3);
+    color: hsl(142 76% 36%);
+    animation: security-pulse 3s ease-in-out infinite;
+  }
+
+  .ai-indicator {
+    @apply inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium;
+    background: linear-gradient(135deg, hsl(217 91% 60% / 0.2), hsl(185 100% 50% / 0.2));
+    border: 1px solid hsl(217 91% 60% / 0.3);
+    color: hsl(217 91% 60%);
+    animation: ai-glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Enhanced Strength Meter */
+  .strength-weak { 
+    background: linear-gradient(90deg, hsl(0 84% 60%), hsl(0 84% 60% / 0.5));
+    box-shadow: 0 0 10px hsl(0 84% 60% / 0.3);
+  }
+  .strength-fair { 
+    background: linear-gradient(90deg, hsl(38 92% 50%), hsl(38 92% 50% / 0.5));
+    box-shadow: 0 0 10px hsl(38 92% 50% / 0.3);
+  }
+  .strength-good { 
+    background: linear-gradient(90deg, hsl(217 91% 60%), hsl(217 91% 60% / 0.5));
+    box-shadow: 0 0 10px hsl(217 91% 60% / 0.3);
+  }
+  .strength-strong { 
+    background: linear-gradient(90deg, hsl(185 100% 50%), hsl(185 100% 50% / 0.5));
+    box-shadow: 0 0 15px hsl(185 100% 50% / 0.4);
+  }
+  .strength-very-strong { 
+    background: linear-gradient(90deg, hsl(142 76% 36%), hsl(142 76% 36% / 0.5));
+    box-shadow: 0 0 20px hsl(142 76% 36% / 0.5);
+    animation: quantum-pulse 1.5s ease-in-out infinite alternate;
+  }
+
+  /* Quantum Entropy Display */
+  .entropy-display {
+    @apply relative overflow-hidden rounded-lg p-3;
+    background: linear-gradient(135deg, hsl(220 27% 10% / 0.8), hsl(220 27% 15% / 0.6));
+    border: 1px solid hsl(217 91% 60% / 0.2);
+  }
+
+  .entropy-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, hsl(217 91% 60%), hsl(185 100% 50%), hsl(142 76% 36%));
+    animation: entropy-flow 3s linear infinite;
+  }
+
+  /* AI Processing Animation */
+  .ai-processing {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-processing::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsl(217 91% 60% / 0.1), transparent);
+    animation: ai-scan 2s ease-in-out infinite;
+  }
 }
 
 @layer utilities {
@@ -226,5 +342,77 @@ All colors MUST be HSL for perfect theming.
   }
   50% {
     opacity: 0.6;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes quantum-pulse {
+  0% {
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.5);
+  }
+  100% {
+    box-shadow: 0 0 30px hsl(217 91% 60% / 0.8), 0 0 40px hsl(185 100% 50% / 0.3);
+  }
+}
+
+@keyframes neural-drift {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(10px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(-5px) translateY(10px);
+  }
+  75% {
+    transform: translateX(5px) translateY(-10px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes security-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(142 76% 36% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px hsl(142 76% 36% / 0.6);
+  }
+}
+
+@keyframes ai-glow {
+  0% {
+    box-shadow: 0 0 5px hsl(217 91% 60% / 0.3);
+  }
+  100% {
+    box-shadow: 0 0 15px hsl(217 91% 60% / 0.6), 0 0 25px hsl(185 100% 50% / 0.3);
+  }
+}
+
+@keyframes entropy-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes ai-scan {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
   }
 }

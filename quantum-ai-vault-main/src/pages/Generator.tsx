@@ -144,9 +144,24 @@ const Generator = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h1 className="text-4xl font-bold mb-4">Password Generator</h1>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="quantum-glow p-3 rounded-full">
+              <Shield className="h-8 w-8 text-primary animate-glow" />
+            </div>
+            <h1 className="text-4xl font-bold text-gradient">Quantum AI Generator</h1>
+            <div className="flex gap-2">
+              <span className="ai-indicator">
+                <Bot className="h-3 w-3" />
+                AI-Powered
+              </span>
+              <span className="pqc-indicator">
+                <Shield className="h-3 w-3" />
+                PQC-Safe
+              </span>
+            </div>
+          </div>
           <p className="text-xl text-muted-foreground">
-            AI-powered, quantum-safe password generation for ultimate security
+            Next-generation password generation using AI neural networks and post-quantum cryptography
           </p>
         </motion.div>
 
@@ -181,12 +196,24 @@ const Generator = () => {
                   </TabsList>
 
                   <TabsContent value="ai" className="space-y-4">
-                    <div className="text-center py-8">
-                      <Bot className="h-12 w-12 text-primary mx-auto mb-4" />
-                      <h3 className="text-lg font-semibold mb-2">AI-Powered Passphrases</h3>
+                    <div className="text-center py-8 ai-processing">
+                      <div className="quantum-glow p-4 rounded-full w-fit mx-auto mb-4">
+                        <Bot className="h-12 w-12 text-primary animate-glow" />
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2 text-gradient">Neural Network Passphrases</h3>
                       <p className="text-muted-foreground mb-4">
-                        Human-readable yet secure passwords using advanced AI
+                        Advanced AI generates human-readable yet cryptographically secure passphrases
                       </p>
+                      <div className="flex items-center justify-center gap-2 mb-4">
+                        <span className="ai-indicator">
+                          <Bot className="h-3 w-3" />
+                          GPT-2 Neural Engine
+                        </span>
+                        <span className="pqc-indicator">
+                          <Shield className="h-3 w-3" />
+                          Quantum-Resistant
+                        </span>
+                      </div>
                       <Button
                         onClick={generateAIPassphrase}
                         disabled={isGenerating}
@@ -195,10 +222,10 @@ const Generator = () => {
                         {isGenerating ? (
                           <>
                             <RefreshCw className="mr-2 h-4 w-4 animate-spin" />
-                            Generating...
+                            AI Processing...
                           </>
                         ) : (
-                          "Generate AI Passphrase"
+                          "Generate Neural Passphrase"
                         )}
                       </Button>
                     </div>
@@ -321,22 +348,33 @@ const Generator = () => {
                     </div>
                     
                     {strength && (
-                      <div className="space-y-2">
+                      <div className="entropy-display space-y-3">
                         <div className="flex justify-between items-center">
-                          <span className="text-sm">Strength:</span>
+                          <span className="text-sm font-medium">Cryptographic Strength:</span>
                           <Badge variant="outline" className={strength.color}>
                             {strength.label}
                           </Badge>
                         </div>
-                        <div className="w-full bg-secondary/30 rounded-full h-2">
+                        <div className="w-full bg-secondary/30 rounded-full h-3 overflow-hidden">
                           <div
-                            className={`h-2 rounded-full ${strength.color} transition-all duration-500`}
+                            className={`h-3 rounded-full ${strength.color} transition-all duration-500 relative`}
                             style={{ width: `${(strength.score / 5) * 100}%` }}
-                          />
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
+                          </div>
                         </div>
-                        <p className="text-xs text-muted-foreground">
-                          Entropy: {Math.round(strength.entropy)} bits
-                        </p>
+                        <div className="grid grid-cols-2 gap-4 text-xs">
+                          <div className="text-center">
+                            <div className="font-mono text-primary">{Math.round(strength.entropy)} bits</div>
+                            <div className="text-muted-foreground">Entropy</div>
+                          </div>
+                          <div className="text-center">
+                            <div className="font-mono text-accent">
+                              {strength.entropy > 128 ? "∞" : "2^" + Math.round(strength.entropy)}
+                            </div>
+                            <div className="text-muted-foreground">Complexity</div>
+                          </div>
+                        </div>
                       </div>
                     )}
 

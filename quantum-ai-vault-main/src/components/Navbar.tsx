@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X } from "lucide-react";
+import { Shield, Menu, X, Bot } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -34,7 +34,17 @@ const Navbar = () => {
             <div className="quantum-glow p-2 rounded-lg">
               <Shield className="h-6 w-6 text-primary animate-glow" />
             </div>
-            <span className="text-xl font-bold text-gradient">QuantumSafe</span>
+            <span className="text-xl font-bold text-gradient">QuantumAI Vault</span>
+            <div className="flex gap-1">
+              <span className="ai-indicator text-xs">
+                <Bot className="h-2 w-2" />
+                AI
+              </span>
+              <span className="pqc-indicator text-xs">
+                <Shield className="h-2 w-2" />
+                PQC
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

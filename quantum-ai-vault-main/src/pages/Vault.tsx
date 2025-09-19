@@ -137,9 +137,20 @@ const Vault = () => {
         >
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
             <div>
-              <h1 className="text-4xl font-bold mb-2">Password Vault</h1>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="quantum-glow p-2 rounded-full">
+                  <Shield className="h-6 w-6 text-primary animate-glow" />
+                </div>
+                <h1 className="text-4xl font-bold text-gradient">Quantum Vault</h1>
+                <div className="flex gap-2">
+                  <span className="pqc-indicator">
+                    <Lock className="h-3 w-3" />
+                    PQC-Encrypted
+                  </span>
+                </div>
+              </div>
               <p className="text-xl text-muted-foreground">
-                Your quantum-safe password collection
+                Post-quantum cryptography secured password collection
               </p>
             </div>
             
@@ -205,9 +216,14 @@ const Vault = () => {
                     <div className="flex items-start justify-between">
                       <div>
                         <CardTitle className="text-lg">{item.title}</CardTitle>
-                        <CardDescription>Encrypted item</CardDescription>
+                        <CardDescription>Quantum-encrypted secret</CardDescription>
                       </div>
-                      <Badge variant="outline">PQC</Badge>
+                      <div className="flex gap-1">
+                        <span className="pqc-indicator">
+                          <Shield className="h-3 w-3" />
+                          Kyber512
+                        </span>
+                      </div>
                     </div>
                   </CardHeader>
                   
