@@ -1,7 +1,7 @@
 # Quantum-Safe Password Generator 
 
 ## Overview
-The **Quantum-Safe Password Generator** is an AI-powered, post-quantum secure password manager prototype.  
+The **Quantum-Safe Password Generator** is an AI-powered, post-quantum secure password manager prototype for MVP hackathon by GDG.  
 It is designed to generate and protect user credentials against **future quantum computer attacks** while keeping the UI simple and accessible.
 
 This project was built with:
