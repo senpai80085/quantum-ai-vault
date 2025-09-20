@@ -54,7 +54,7 @@ GitHub Repo: [Quantum AI Vault](https://github.com/senpai80085/quantum-ai-vault)
 ---
 
 ## Example Architecture Flow
-flowchart TD
+```flowchart TD
   A[User] --> B[Frontend - Loveable]
   B --> C[Generator (AI / RNG)]
   C --> D[PQC Encrypt (Kyber512)]
@@ -62,7 +62,7 @@ flowchart TD
   E --> F[Decrypt]
   F --> B
   D --> G[Analytics: Entropy / Crack Time]
-  G --> B
+  G --> B```
 ---
 
 ## Installation (Developer Mode)
