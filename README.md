@@ -1,4 +1,4 @@
-# Quantum-Safe Password Generator ðŸ”âš›ï¸
+# Quantum-Safe Password Generator 
 
 ## Overview
 The **Quantum-Safe Password Generator** is an AI-powered, post-quantum secure password manager prototype.  
@@ -15,7 +15,7 @@ GitHub Repo: [Quantum AI Vault](https://github.com/senpai80085/quantum-ai-vault)
 
 ---
 
-## âœ¨ Features
+## Features
 - **AI-Powered Password Modes**  
   - Random Strong Strings (cryptographically secure RNG)  
   - Natural Language Passphrases (AI-generated, human-friendly)  
@@ -36,7 +36,7 @@ GitHub Repo: [Quantum AI Vault](https://github.com/senpai80085/quantum-ai-vault)
 
 ---
 
-## ðŸ› ï¸ Tech Stack
+## Tech Stack
 - **Frontend (Prototype)**: Loveable AI (React + Tailwind, generated via no-code)  
 - **Backend**: Python / Node.js with PQC libraries, integrated via Cursor AI  
 - **AI Integration**: GPT-based model for passphrase generation  
@@ -44,7 +44,7 @@ GitHub Repo: [Quantum AI Vault](https://github.com/senpai80085/quantum-ai-vault)
 
 ---
 
-## ðŸš€ Workflow
+## Workflow
 1. User selects **password generation mode**.  
 2. App generates password using **AI / RNG**.  
 3. Password is encrypted with **Kyber512 + AES-GCM**.  
@@ -53,7 +53,7 @@ GitHub Repo: [Quantum AI Vault](https://github.com/senpai80085/quantum-ai-vault)
 
 ---
 
-## ðŸ“Š Example Architecture Flow
+## Example Architecture Flow
 ```mermaid
 flowchart TD
     A[User] --> B[Frontend UI - Loveable]
@@ -68,7 +68,7 @@ flowchart TD
 
 ---
 
-## ðŸ“¦ Installation (Developer Mode)
+## Installation (Developer Mode)
 Clone the repo:
 ```bash
 git clone https://github.com/senpai80085/quantum-ai-vault.git
@@ -93,7 +93,7 @@ npm run dev
 
 ---
 
-## ðŸ§  Future Scope
+## Future Scope
 - Multi-device sync with PQC-protected cloud storage  
 - Integration with browser extensions & mobile apps  
 - Advanced PQC algorithms (Dilithium, Falcon for signatures)  
@@ -101,12 +101,12 @@ npm run dev
 
 ---
 
-## ðŸ‘¨â€ðŸ’» Contributors
+##  Contributors
 - Built during MVP Pitch Competition 2025  
 - **Priyanshu Karmakar** (Cybersecurity & AI enthusiast)  
 - AI Support: Loveable, Cursor, ChatGPT  
 
 ---
 
-## ðŸ“œ License
-MIT License â€“ Free to use, modify, and distribute with attribution.
+## License
+MIT License Free to use, modify, and distribute with attribution.
