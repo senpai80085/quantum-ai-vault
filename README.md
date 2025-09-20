@@ -54,18 +54,15 @@ GitHub Repo: [Quantum AI Vault](https://github.com/senpai80085/quantum-ai-vault)
 ---
 
 ## Example Architecture Flow
-```mermaid
 flowchart TD
-    A[User] --> B[Frontend UI - Loveable]
-    B --> C[Password Generator (AI / RNG)]
-    C --> D[Encryption Module - PQC (Kyber512)]
-    D --> E[Secure Vault (AES-GCM)]
-    E --> F[Decryption Module]
-    F --> B
-    D --> G[Analytics Engine - Entropy/Crack Time]
-    G --> B
-```
-
+  A[User] --> B[Frontend - Loveable]
+  B --> C[Generator (AI / RNG)]
+  C --> D[PQC Encrypt (Kyber512)]
+  D --> E[Vault (AES-GCM)]
+  E --> F[Decrypt]
+  F --> B
+  D --> G[Analytics: Entropy / Crack Time]
+  G --> B
 ---
 
 ## Installation (Developer Mode)
