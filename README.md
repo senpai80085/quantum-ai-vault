@@ -1,73 +1,112 @@
-# Welcome to your Lovable project
+# Quantum-Safe Password Generator ðŸ”âš›ï¸
 
-## Project info
+## Overview
+The **Quantum-Safe Password Generator** is an AI-powered, post-quantum secure password manager prototype.  
+It is designed to generate and protect user credentials against **future quantum computer attacks** while keeping the UI simple and accessible.
 
-**URL**: https://lovable.dev/projects/4f898ada-67de-4d5d-98d0-b61689c9a0c9
+This project was built with:
+- **Frontend (UI/UX)**: Loveable AI (No-Code Prototype)
+- **Backend (Logic & Security)**: Cursor AI (Code + PQC + AI Integration)
+- **AI Support**: GPT-powered passphrase generation
+- **PQC Algorithms**: Kyber512 (for key encapsulation) + AES-GCM (for symmetric encryption)
 
-## How can I edit this code?
+Live Demo: [Quantum Pass Gen](https://quantum-pass-gen.vercel.app/)  
+GitHub Repo: [Quantum AI Vault](https://github.com/senpai80085/quantum-ai-vault)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## âœ¨ Features
+- **AI-Powered Password Modes**  
+  - Random Strong Strings (cryptographically secure RNG)  
+  - Natural Language Passphrases (AI-generated, human-friendly)  
+  - Developer API Keys (long, structured secrets)  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4f898ada-67de-4d5d-98d0-b61689c9a0c9) and start prompting.
+- **Post-Quantum Security (PQC)**  
+  - Uses **Kyber512** for encryption against quantum brute-force attacks  
+  - AES-GCM symmetric encryption for secure vault storage  
 
-Changes made via Lovable will be committed automatically to this repo.
+- **User Vault**  
+  - Save and retrieve encrypted passwords  
+  - One-click decryption demo to show PQC in action  
 
-**Use your preferred IDE**
+- **Password Analytics**  
+  - Strength & entropy score  
+  - Crack-time estimator (classical vs quantum computers)  
+  - Visual charts for demo impact  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ðŸ› ï¸ Tech Stack
+- **Frontend (Prototype)**: Loveable AI (React + Tailwind, generated via no-code)  
+- **Backend**: Python / Node.js with PQC libraries, integrated via Cursor AI  
+- **AI Integration**: GPT-based model for passphrase generation  
+- **Deployment**: Vercel (Frontend) + Cloud backend (TBD: Supabase/Firebase/AWS)  
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone https://github.com/senpai80085/quantum-ai-vault
+## ðŸš€ Workflow
+1. User selects **password generation mode**.  
+2. App generates password using **AI / RNG**.  
+3. Password is encrypted with **Kyber512 + AES-GCM**.  
+4. User can **save** it in the vault or **decrypt** it on-demand.  
+5. Strength & crack-time analytics are displayed.  
 
-# Step 2: Navigate to the project directory.
+---
+
+## ðŸ“Š Example Architecture Flow
+```mermaid
+flowchart TD
+    A[User] --> B[Frontend UI - Loveable]
+    B --> C[Password Generator (AI / RNG)]
+    C --> D[Encryption Module - PQC (Kyber512)]
+    D --> E[Secure Vault (AES-GCM)]
+    E --> F[Decryption Module]
+    F --> B
+    D --> G[Analytics Engine - Entropy/Crack Time]
+    G --> B
+```
+
+---
+
+## ðŸ“¦ Installation (Developer Mode)
+Clone the repo:
+```bash
+git clone https://github.com/senpai80085/quantum-ai-vault.git
 cd quantum-ai-vault
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+Install dependencies (Python example):
+```bash
+pip install -r requirements.txt
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Run backend:
+```bash
+python app.py
+```
+
+Run frontend (if separate React build):
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## ðŸ§  Future Scope
+- Multi-device sync with PQC-protected cloud storage  
+- Integration with browser extensions & mobile apps  
+- Advanced PQC algorithms (Dilithium, Falcon for signatures)  
+- Enterprise API for developers  
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## ðŸ‘¨â€ðŸ’» Contributors
+- Built during MVP Pitch Competition 2025  
+- **Priyanshu Karmakar** (Cybersecurity & AI enthusiast)  
+- AI Support: Loveable, Cursor, ChatGPT  
 
-## What technologies are used for this project?
+---
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/4f898ada-67de-4d5d-98d0-b61689c9a0c9) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## ðŸ“œ License
+MIT License â€“ Free to use, modify, and distribute with attribution.
