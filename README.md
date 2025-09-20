@@ -62,7 +62,9 @@ GitHub Repo: [Quantum AI Vault](https://github.com/senpai80085/quantum-ai-vault)
   E --> F[Decrypt]
   F --> B
   D --> G[Analytics: Entropy / Crack Time]
-  G --> B```
+  G --> B
+```
+
 ---
 
 ## Installation (Developer Mode)
